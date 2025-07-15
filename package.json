@@ -1,0 +1,38 @@
+{
+  "name": "worker-proxy",
+  "description": "Worker that proxies requests to a another website",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "wrangler build",
+    "deploy": "wrangler deploy",
+    "deploy:production": "wrangler deploy --env production",
+    "ci": "pnpm build",
+    "release": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@cloudflare/workers-types": "^4.20250715.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
+    "@types/node": "^24.0.13",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.24.3"
+  },
+  "author": {
+    "name": "Rawand Faraidun",
+    "email": "rawand.f.ahmad@gmail.com",
+    "url": "https://github.com/rawand-faraidun"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rawand-faraidun/worker-proxy.git"
+  },
+  "homepage": "https://github.com/rawand-faraidun/worker-proxy#readme",
+  "bugs": {
+    "url": "https://github.com/rawand-faraidun/worker-proxy/issues"
+  }
+}
