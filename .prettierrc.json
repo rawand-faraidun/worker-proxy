@@ -1,0 +1,13 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "printWidth": 125,
+  "endOfLine": "crlf",
+  "jsxSingleQuote": false,
+  "importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]", "^@lib"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}
