@@ -6,8 +6,10 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "wrangler dev",
+    "build": "wrangler build",
     "deploy": "wrangler deploy",
     "deploy:production": "wrangler deploy --env production",
+    "ci": "pnpm build",
     "release": "changeset version"
   },
   "devDependencies": {

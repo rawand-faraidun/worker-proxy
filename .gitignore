@@ -20,6 +20,8 @@
 # production
 /build
 *.pem
+/.wrangler
+/dist
 
 # misc
 .DS_Store
