@@ -10,12 +10,12 @@
     "deploy:production": "wrangler deploy --env production"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240129.0",
+    "@cloudflare/workers-types": "^4.20250715.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
     "@types/node": "^24.0.13",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.24.3"
   },
   "author": {
     "name": "Rawand Faraidun",
