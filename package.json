@@ -1,7 +1,7 @@
 {
   "name": "worker-proxy",
   "description": "Worker that proxies requests to a another website",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "main": "src/index.ts",
   "scripts": {
