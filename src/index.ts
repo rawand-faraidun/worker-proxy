@@ -9,7 +9,7 @@ export default {
     try {
       // url
       const url = new URL(request.url)
-      const targetUrl = new URL(url.pathname, env.PROXY_URL)
+      const targetUrl = new URL(`${url.pathname}${url.search}`, env.PROXY_URL)
 
       // proxy request
       const proxyRequest = new Request(targetUrl, request)
