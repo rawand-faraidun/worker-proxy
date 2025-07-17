@@ -1,5 +1,5 @@
 import { Env } from '@lib/types'
-import { appendHeaders, removeHeaders } from '@lib/utils'
+import { appendHeaders, cloneHeaders, removeHeaders } from '@lib/utils'
 
 /**
  * worker api
@@ -13,15 +13,22 @@ export default {
 
       // proxy request
       const proxyRequest = new Request(targetUrl, request)
+      Object.entries(cloneHeaders).forEach(([key, value]) =>
+        proxyRequest.headers.set(value, proxyRequest.headers.get(key) ?? request.headers.get(key) ?? '')
+      )
       Object.entries(appendHeaders).forEach(([key, value]) => proxyRequest.headers.set(key, value))
       removeHeaders.forEach(item => proxyRequest.headers.delete(item))
 
       // proxy response
       const response = await fetch(proxyRequest)
       const proxyResponse = new Response(response.body, response)
+      Object.entries(cloneHeaders).forEach(([key, value]) =>
+        proxyResponse.headers.set(value, proxyResponse.headers.get(key) ?? request.headers.get(key) ?? '')
+      )
       Object.entries(appendHeaders).forEach(([key, value]) => proxyResponse.headers.set(key, value))
+      removeHeaders.forEach(item => proxyResponse.headers.delete(item))
 
-      return response
+      return proxyResponse
     } catch (error: any) {
       console.error({ message: error?.message, error })
       return new Response('Internal Server Error', { status: 500 })
